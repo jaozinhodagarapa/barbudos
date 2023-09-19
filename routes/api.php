@@ -22,3 +22,9 @@ Route::delete('delete/{id}',[ServicoController::class, 'excluir']);
 Route::put('update', [ServicoController::class, 'update']);
 
 Route::post('criarCliente', [ClienteController::class, 'criarCliente']);
+Route::post('nome', [ClienteController::class, 'pesquisaPorNome']);
+Route::post('celular', [ClienteController::class, 'pesquisaCelular']);
+Route::post('cpf', [ClienteController::class, 'pesquisaCPF']);
+Route::post('email', [ClienteController::class, 'pesquisaEmail']);
+Route::post('excluir', [ClienteController::class, 'excluir']);
+Route::post('update', [ClienteController::class, 'update']);
