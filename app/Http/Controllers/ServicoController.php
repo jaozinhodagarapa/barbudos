@@ -54,25 +54,25 @@ class ServicoController extends Controller
         if (!isset($servico)) {
             return response()->json([
                 'status' => false,
-                'message' => "Usuário não encontrado"
+                'message' => "Serviço não encontrado"
             ]);
         }
 
         $servico->delete();
         return response()->json([
             'status' => true,
-            'message' => "Usuário excluído com sucesso"
+            'message' => "Serviço excluído com sucesso"
         ]);
     }
 
-    public function update(Request $request)
+    public function update(ServicoFormRequest $request)
     {
         $servico = Servico::find($request->id);
 
         if (!isset($servico)) {
             return response()->json([
                 'status' => false,
-                'message' => "Usuário não encontrado"
+                'message' => "Serviço não encontrado"
             ]);
         }
        
