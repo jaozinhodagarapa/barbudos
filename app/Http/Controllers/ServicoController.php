@@ -48,6 +48,7 @@ class ServicoController extends Controller
             'message' => 'Não há resultado para pesquisa.'
         ]);
     }
+    
     public function excluir($id)
     {
         $servico = Servico::find($id);
