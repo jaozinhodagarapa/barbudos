@@ -26,5 +26,5 @@ Route::post('nome', [ClienteController::class, 'pesquisaPorNome']);
 Route::post('celular', [ClienteController::class, 'pesquisaCelular']);
 Route::post('cpf', [ClienteController::class, 'pesquisaCPF']);
 Route::post('email', [ClienteController::class, 'pesquisaEmail']);
-Route::delete('excluir', [ClienteController::class, 'excluir']);
+Route::delete('excluir/{id}', [ClienteController::class, 'excluir']);
 Route::put('update', [ClienteController::class, 'update']);
