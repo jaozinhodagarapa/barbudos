@@ -94,7 +94,7 @@ class ServicoController extends Controller
 
         return response()->json([
             'status' => true,
-            'message' => "Serviço atualizado."
+            'message' => "Cadastro atualizado."
         ]);
        
     }
