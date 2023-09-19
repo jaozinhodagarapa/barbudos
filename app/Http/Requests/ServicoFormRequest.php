@@ -41,6 +41,7 @@ class ServicoFormRequest extends FormRequest
     public function messages()
     {
         return [
+            'nome.unique' => 'O serviço ja foi cadastrado',
             'nome.required' => 'O campo nome é obrigatorio',
             'nome.max' => 'o campo nome deve conter no maximo 80 caracteres',
             'nome.min' => 'o campo nome deve conter no minimo 5 caracteres',
