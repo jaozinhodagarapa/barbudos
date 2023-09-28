@@ -124,7 +124,7 @@ class ProfissionalController extends Controller
     {
         $profissional = Profissional::find($request->id);
 
-        if (!isset($profissional)) {
+        if (!isset($pro)) {
             return response()->json([
                 'status' => false,
                 'message' => "Profissional Atualizado"
