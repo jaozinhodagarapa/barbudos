@@ -106,7 +106,7 @@ class ClienteController extends Controller
     public function excluir($id)
     {
         $cliente = cliente::find($id);
-        if (!isset($clientee)) {
+        if (!isset($cliente)) {
             return response()->json([
                 'status' => false,
                 'message' => "Serviço não encontrado"
