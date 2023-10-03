@@ -124,10 +124,10 @@ class ProfissionalController extends Controller
     {
         $profissional = Profissional::find($request->id);
 
-        if (!isset($pro)) {
+        if (!isset($profissional)) {
             return response()->json([
                 'status' => false,
-                'message' => "Profissional Atualizado"
+                'message' => "Profissional não encontrado"
             ]);
         }
        
@@ -169,6 +169,9 @@ class ProfissionalController extends Controller
         }
         if(isset($request->complemento)){
             $profissional-> complemento = $request->complemneto;
+        }
+        if(isset($request->password)){
+            $profissional-> password = $request->password;
         }
         if(isset($request->password)){
             $profissional-> password = $request->password;
