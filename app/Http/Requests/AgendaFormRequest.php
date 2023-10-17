@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class AgendaFormRequest extends FormRequest
 {
@@ -22,11 +24,34 @@ class AgendaFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'profissional_id' => 'required',
-            'cliente_id' => 'required',
-            'servico_id' => 'required',
-            'data_hora' => 'required',
-            'tipo_pagamento' => 'required|max:20|min:3'
+            'profissionalId' => 'required',
+            'clienteId' => 'required',
+            'servicoId' => 'required',
+            'datahora' => 'required|date',
+            'tipopagamento' => 'required|max:20|min:3',
+            'valor' => 'required|decimal:2,4'
+        ];
+    }
+    public function failedValidation(Validator $validator){
+        throw new HttpResponseException(response()->json([
+            'success' => false,
+            'error' => $validator->errors()
+        ]));
+    }
+
+    public function messages()
+    {
+        return[
+        'profisssionalId.required' => 'Campo profissional é obrigatório',
+        'clienteId.required' => 'Campo cliente é obrigatório',
+        'servicoId.required' => 'Campo serviço é obrigatório',
+        'datahora.required' => 'Campo data é obrigatório',
+        'datahora.date' => 'Formato Inválido',
+        'tipopagamento.required' => 'Campo pagamento é obrigatório',
+        'tipopagamento.max' => 'Campo pagamento deve conter no maximo 20 caracteres',
+        'tipopagamento.min' => 'Campo pagamento deve conter no minimo 3 caracteres',
+        'valor.required' => 'Campo valor é obrigatório',
+        'valor.decimal' => 'Este campo so aceita numero decimal'
         ];
     }
 }

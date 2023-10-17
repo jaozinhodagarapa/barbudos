@@ -17,11 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+//Serviço
 Route::post('criarServico', [ServicoController::class, 'criarServico']);
 Route::post('nome',[ServicoController::class, 'pesquisaPorNome']);
 Route::delete('delete/{id}',[ServicoController::class, 'excluir']);
 Route::put('update', [ServicoController::class, 'update']);
 
+//Cliente
 Route::post('criarCliente', [ClienteController::class, 'criarCliente']);
 Route::post('nome', [ClienteController::class, 'pesquisaPorNome']);
 Route::post('celular', [ClienteController::class, 'pesquisaCelular']);
@@ -30,7 +34,7 @@ Route::post('email', [ClienteController::class, 'pesquisaEmail']);
 Route::delete('excluir/{id}', [ClienteController::class, 'excluir']);
 Route::put('update', [ClienteController::class, 'update']);
 
-
+//Profissioanl
 Route::post('criarProfissional', [ProfissionalController::class, 'criarProfissional']);
 Route::post('nome', [ProfissionalController::class, 'pesquisaPorNome']);
 Route::post('celular', [ProfissionalController::class, 'pesquisaCelular']);
