@@ -27,8 +27,8 @@ class AgendaFormRequest extends FormRequest
             'profissionalId' => 'required',
             'clienteId' => 'required',
             'servicoId' => 'required',
-            'datahora' => 'required|date',
-            'tipopagamento' => 'required|max:20|min:3',
+            'dataHora' => 'required|date',
+            'pagamento' => 'required|max:20|min:3',
             'valor' => 'required|decimal:2,4'
         ];
     }
@@ -42,14 +42,14 @@ class AgendaFormRequest extends FormRequest
     public function messages()
     {
         return[
-        'profisssionalId.required' => 'Campo profissional é obrigatório',
+        'profissionalId.required' => 'Campo profissional é obrigatório',
         'clienteId.required' => 'Campo cliente é obrigatório',
         'servicoId.required' => 'Campo serviço é obrigatório',
-        'datahora.required' => 'Campo data é obrigatório',
-        'datahora.date' => 'Formato Inválido',
-        'tipopagamento.required' => 'Campo pagamento é obrigatório',
-        'tipopagamento.max' => 'Campo pagamento deve conter no maximo 20 caracteres',
-        'tipopagamento.min' => 'Campo pagamento deve conter no minimo 3 caracteres',
+        'dataHora.required' => 'Campo data é obrigatório',
+        'dataHora.date' => 'Formato Inválido',
+        'pagamento.required' => 'Campo pagamento é obrigatório',
+        'pagamento.max' => 'Campo pagamento deve conter no maximo 20 caracteres',
+        'pagamento.min' => 'Campo pagamento deve conter no minimo 3 caracteres',
         'valor.required' => 'Campo valor é obrigatório',
         'valor.decimal' => 'Este campo so aceita numero decimal'
         ];

@@ -22,7 +22,7 @@ class AgendaController extends Controller
 
         return response()->json([
             "success" => true,
-            "message" => "cliente cadastrado",
+            "message" => "Agendamento cadastrado",
             "data" => $agenda
         ], 200);
        

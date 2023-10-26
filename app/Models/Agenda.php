@@ -13,8 +13,8 @@ class Agenda extends Model
         'profissionalId',
         'clienteId',
         'servicoId',
-        'datahora',
-        'tipopagamneto',
+        'dataHora',
+        'pagamento',
         'valor',
 
     ];
