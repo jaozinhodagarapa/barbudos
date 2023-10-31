@@ -45,6 +45,6 @@ Route::post('cpf', [ProfissionalController::class, 'pesquisaCPF']);
 Route::post('email', [ProfissionalController::class, 'pesquisaEmail']);
 Route::delete('excluir/{id}', [ProfissionalController::class, 'excluir']);
 Route::put('update', [ProfissionalController::class, 'update']);
-Route::get('retornarTudo', [ProfissionalController::class, 'retornarTudo']);
+Route::get('retornarTodos', [ProfissionalController::class, 'retornarTodos']);
 
 Route::post('criarAgenda',[AgendaController::class, 'criarAgenda']);

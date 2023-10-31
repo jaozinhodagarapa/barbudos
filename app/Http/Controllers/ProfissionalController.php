@@ -186,7 +186,7 @@ class ProfissionalController extends Controller
         ]);
        
     }
-    public function retornarTudo(){
+    public function retornarTodos(){
         $profissional = Profissional::all();
 
         if(count($profissional)==0){
