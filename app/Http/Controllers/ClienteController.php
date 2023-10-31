@@ -202,4 +202,20 @@ class ClienteController extends Controller
         ]);
        
     }
+    public function retornarTudo(){
+        $cliente = Cliente::all();
+
+        if(count($cliente)==0){
+            return response()->json([
+                'status'=> false,
+                'message'=> "Cliente não encontrado"
+            ]);
+        }
+        return response()->json([
+            'status'=> true,
+            'data' => $cliente
+        ]);
+       }
+    
+
 }

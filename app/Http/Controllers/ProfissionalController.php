@@ -186,4 +186,19 @@ class ProfissionalController extends Controller
         ]);
        
     }
+    public function retornarTudo(){
+        $profissional = Profissional::all();
+
+        if(count($profissional)==0){
+            return response()->json([
+                'status'=> false,
+                'message'=> "Cliente não encontrado"
+            ]);
+        }
+        return response()->json([
+            'status'=> true,
+            'data' => $profissional
+        ]);
+       }
+    
 }
