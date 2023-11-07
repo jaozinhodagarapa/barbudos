@@ -32,7 +32,7 @@ class ServicoController extends Controller
             ]);
         }
     }
-    public function pesquisaPorNome(ServicoFormRequest $request)
+    public function pesquisaPorNome(Request $request)
     {
         $servico = Servico::where('nome', 'like', '%' . $request->nome . '%')->get();
 

@@ -22,10 +22,10 @@ use Illuminate\Support\Facades\Route;
 
 //Serviço
 Route::post('criarServico', [ServicoController::class, 'criarServico']);
-Route::post('nome',[ServicoController::class, 'pesquisaPorNome']);
+Route::post('nomes',[ServicoController::class, 'pesquisaPorNome']);
 Route::delete('delete/{id}',[ServicoController::class, 'excluir']);
 Route::put('update', [ServicoController::class, 'update']);
-Route::get('retornarTudo', [ServicoController::class, 'retornarTudo']);
+Route::get('retornarTudos', [ServicoController::class, 'retornarTudo']);
 
 //Cliente
 Route::post('criarCliente', [ClienteController::class, 'criarCliente']);
