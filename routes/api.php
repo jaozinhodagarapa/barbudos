@@ -35,7 +35,7 @@ Route::post('celular', [ClienteController::class, 'pesquisaCelular']);
 Route::post('cpf', [ClienteController::class, 'pesquisaCPF']);
 Route::post('email', [ClienteController::class, 'pesquisaEmail']);
 Route::delete('excluir/{id}', [ClienteController::class, 'excluir']);
-Route::put('update', [ClienteController::class, 'update']);
+Route::put('updatee', [ClienteController::class, 'update']);
 Route::get('retornarTudus', [ClienteController::class, 'retornarTudo']);
 Route::get('pesquisaPorId/{id}', [ClienteController::class, 'pesquisaPorId']);
     
