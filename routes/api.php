@@ -22,29 +22,41 @@ use Illuminate\Support\Facades\Route;
 
 //Serviço
 Route::post('criarServico', [ServicoController::class, 'criarServico']);
-Route::post('nomes',[ServicoController::class, 'pesquisaPorNome']);
+Route::post('noomes',[ServicoController::class, 'pesquisaPorNome']);
 Route::delete('delete/{id}',[ServicoController::class, 'excluir']);
 Route::put('update', [ServicoController::class, 'update']);
 Route::get('retornarTudos', [ServicoController::class, 'retornarTudo']);
+Route::get('pesquisaId/{id}', [ServicoController::class, 'pesquisaId']);
 
 //Cliente
 Route::post('criarCliente', [ClienteController::class, 'criarCliente']);
-Route::post('nome', [ClienteController::class, 'pesquisaPorNome']);
+Route::post('nomes', [ClienteController::class, 'pesquisaPorNome']);
 Route::post('celular', [ClienteController::class, 'pesquisaCelular']);
 Route::post('cpf', [ClienteController::class, 'pesquisaCPF']);
 Route::post('email', [ClienteController::class, 'pesquisaEmail']);
 Route::delete('excluir/{id}', [ClienteController::class, 'excluir']);
 Route::put('update', [ClienteController::class, 'update']);
-Route::get('retornarTudo', [ClienteController::class, 'retornarTudo']);
+Route::get('retornarTudus', [ClienteController::class, 'retornarTudo']);
+Route::get('pesquisaPorId/{id}', [ClienteController::class, 'pesquisaPorId']);
     
 //Profissional
 Route::post('criarProfissional', [ProfissionalController::class, 'criarProfissional']);
-Route::post('nome', [ProfissionalController::class, 'pesquisaPorNome']);
+Route::post('nomess', [ProfissionalController::class, 'pesquisaPorNome']);
 Route::post('celular', [ProfissionalController::class, 'pesquisaCelular']);
 Route::post('cpf', [ProfissionalController::class, 'pesquisaCPF']);
 Route::post('email', [ProfissionalController::class, 'pesquisaEmail']);
 Route::delete('excluir/{id}', [ProfissionalController::class, 'excluir']);
 Route::put('update', [ProfissionalController::class, 'update']);
 Route::get('retornarTodos', [ProfissionalController::class, 'retornarTodos']);
+Route::get('pesquisaPoR/{id}', [ProfissionalController::class, 'pesquisaPoRId']);
+
+
+
+
+
+
+
+
 
 Route::post('criarAgenda',[AgendaController::class, 'criarAgenda']);
+
