@@ -46,7 +46,7 @@ Route::post('celular', [ProfissionalController::class, 'pesquisaCelular']);
 Route::post('cpf', [ProfissionalController::class, 'pesquisaCPF']);
 Route::post('email', [ProfissionalController::class, 'pesquisaEmail']);
 Route::delete('excluir/{id}', [ProfissionalController::class, 'excluir']);
-Route::put('update', [ProfissionalController::class, 'update']);
+Route::put('updateProfissional', [ProfissionalController::class, 'update']);
 Route::get('retornarTodos', [ProfissionalController::class, 'retornarTodos']);
 Route::get('pesquisaPoR/{id}', [ProfissionalController::class, 'pesquisaPoRId']);
 

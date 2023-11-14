@@ -35,7 +35,7 @@ class ProfissionalFormRequest extends FormRequest
             'numero' => 'required|max:10',
             'bairro' => 'required|max:100',
             'cep' => 'required|max:8|min:8',
-            'complemento' => 'max:150',
+            'complemento' => 'required|max:150',
             'password' => 'required',
             'salario' => 'required|decimal:2,4',
         
@@ -79,6 +79,7 @@ class ProfissionalFormRequest extends FormRequest
             'cep.max' => 'deve conter no maximo 8 caracteres',
             'cep.min' => 'o campo cpf deve conter no minimo 8 caracteres',
             'complemento.max' => 'deve conter no maximo 150 caracteres',
+            'complemento.required' => 'O campo complemento deve ser obrigatório',
             'password.required' => 'o campo senha é obrigatorio',
             'pais.required' => 'o campo país é obrigatório',
             'pais.required' => 'o campo país deve conter no maximo 80 caracteres',
