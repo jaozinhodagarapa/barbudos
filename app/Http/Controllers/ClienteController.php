@@ -122,7 +122,6 @@ class ClienteController extends Controller
             'message' => 'não foi possivel alterar a senha'
         ]);
     }
-
     public function excluir($id)
     {
         $cliente = cliente::find($id);

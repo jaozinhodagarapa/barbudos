@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ProfissionalFormRequest;
 use App\Models\Profissional;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ProfissionalController extends Controller
 {
@@ -35,7 +36,7 @@ class ProfissionalController extends Controller
         if (count($profissional) > 0) {
             return response()->json([
                 'status' => false,
-                "message" => "O nome do cliente comtem mais de 200 caracteres, e não pode ser cadastrado",
+                "message" => "O nome do profissional comtem mais de 200 caracteres, e não pode ser cadastrado",
                 'data' => $profissional
             ]);
         }
@@ -215,6 +216,25 @@ class ProfissionalController extends Controller
                'data' => $profissional
            ]);
            
+       }
+
+       public function esqueciSenha(Request $request)
+       {
+           $profissional = Profissional::where('cpf', $request->cpf)->first();
+   
+           if (isset($profissional)) {
+               $profissional->password = Hash::make($profissional->cpf);
+               $profissional->update();
+               return response()->json([
+                   'status' => true,
+                   'message' => 'senha redefinida.'
+               ]);
+           }
+   
+           return response()->json([
+               'status' => true,
+               'message' => 'não foi possivel alterar a senha'
+           ]);
        }
     
 }
