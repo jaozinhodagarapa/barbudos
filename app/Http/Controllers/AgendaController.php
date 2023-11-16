@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AgendaFormRequest;
 use App\Http\Requests\AgendaFormRequestUpdate;
+use App\Http\Requests\AgendaUpdateFormRequestUpdate;
 use App\Models\Agenda;
 use Illuminate\Http\Request;
 
@@ -76,7 +77,7 @@ class AgendaController extends Controller
             'message' => " excluído com sucesso"
         ]);
     }
-    public function update(AgendaFormRequest $request)
+    public function update(AgendaUpdateFormRequestUpdate $request)
     {
         $agenda = Agenda::find($request->id);
 

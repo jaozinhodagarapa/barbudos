@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfissionalFormRequest;
+use App\Http\Requests\ProfissionalFormRequestUpdate;
 use App\Models\Profissional;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -121,7 +122,7 @@ class ProfissionalController extends Controller
             'message' => "Profissional excluído com sucesso"
         ]);
     }
-    public function update( ProfissionalFormRequest $request)
+    public function update( ProfissionalFormRequestUpdate $request)
     {
         $profissional = Profissional::find($request->id);
 
