@@ -38,6 +38,7 @@ Route::delete('excluir/{id}', [ClienteController::class, 'excluir']);
 Route::put('updatee', [ClienteController::class, 'update']);
 Route::get('retornarTudus', [ClienteController::class, 'retornarTudo']);
 Route::get('pesquisaPorId/{id}', [ClienteController::class, 'pesquisaPorId']);
+Route::put('cliente/esqueciSenha',[ClienteController::class, 'esqueciSenha']);
     
 //Profissional
 Route::post('criarProfissional', [ProfissionalController::class, 'criarProfissional']);

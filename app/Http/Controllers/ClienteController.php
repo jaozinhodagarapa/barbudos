@@ -135,7 +135,7 @@ class ClienteController extends Controller
         $cliente->delete();
         return response()->json([
             'status' => true,
-            'message' => "Serviço excluído com sucesso"
+            'message' => "Cliente excluído com sucesso"
         ]);
     }
     public function update( ClienteFormRequest $request)
@@ -145,7 +145,7 @@ class ClienteController extends Controller
         if (!isset($cliente)) {
             return response()->json([
                 'status' => false,
-                'message' => "Serviço não encontrado"
+                'message' => " Cliente não encontrado"
             ]);
         }
        
@@ -186,7 +186,7 @@ class ClienteController extends Controller
             $cliente-> cep = $request->cep;
         }
         if(isset($request->complemento)){
-            $cliente-> complemento = $request->complemneto;
+            $cliente-> complemento = $request->complemento;
         }
         if(isset($request->password)){
             $cliente-> password = $request->password;
@@ -223,7 +223,7 @@ class ClienteController extends Controller
            if ($cliente == null) {
                return response()->json([
                    'status' => false,
-                   'message' => "cliente não encontrada"
+                   'message' => "cliente não encontrado"
                ]);
            }
            return response()->json([
