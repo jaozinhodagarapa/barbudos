@@ -42,7 +42,7 @@ class AgendaController extends Controller
         }
         return response()->json([
             'status' => false,
-            "message" => "nada foi emcontrado com o nome procurado",
+            "message" => "nada foi encontrado com o nome procurado",
             'data' => $agenda
         ]);
     }
@@ -67,14 +67,14 @@ class AgendaController extends Controller
         if (!isset($agenda)) {
             return response()->json([
                 'status' => false,
-                'message' => " não encontrado"
+                'message' => "Agendamento não encontrado"
             ]);
         }
 
         $agenda->delete();
         return response()->json([
             'status' => true,
-            'message' => " excluído com sucesso"
+            'message' => " Agendamento excluído com sucesso"
         ]);
     }
     public function update(AgendaUpdateFormRequestUpdate $request)
@@ -84,7 +84,7 @@ class AgendaController extends Controller
         if (!isset($agenda)) {
             return response()->json([
                 'status' => false,
-                'message' => "Cliente não encontrado"
+                'message' => "Agendamento não encontrado"
             ]);
         }
        
@@ -121,7 +121,7 @@ class AgendaController extends Controller
         if(count($agenda)==0){
             return response()->json([
                 'status'=> false,
-                'message'=> " nao encontrado"
+                'message'=> " Agendamento nao encontrado"
             ]);
         }
         return response()->json([
