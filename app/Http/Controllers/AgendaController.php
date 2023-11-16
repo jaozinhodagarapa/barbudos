@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AgendaFormRequest;
 use App\Http\Requests\AgendaFormRequestUpdate;
+use App\Http\Requests\AgendaUpdateFormRequest;
 use App\Http\Requests\AgendaUpdateFormRequestUpdate;
 use App\Models\Agenda;
 use Illuminate\Http\Request;
@@ -23,15 +24,15 @@ class AgendaController extends Controller
 
         return response()->json([
             "success" => true,
-            "message" => "Agendamento cadastrado",
+            "message" => "agenda cadastrado",
             "data" => $agenda
         ], 200);
        
     }
-   
-    public function pesquisarAgendaNome(Request $request)
+    
+    public function pesquisaPorDataHora(Request $request)
     {
-        $agenda= Agenda::where('clienteId', 'like', '%' . $request->clienteId . '%')->get();
+        $agenda= Agenda::where('dataHora', 'like', '%' . $request->dataHora . '%')->get();
 
         if (count($agenda)>0) {
             return response()->json([
@@ -39,52 +40,55 @@ class AgendaController extends Controller
                 'data' => $agenda
 
             ]);
-        }
+        }   
         return response()->json([
             'status' => false,
             "message" => "nada foi encontrado com o nome procurado",
             'data' => $agenda
         ]);
     }
-    public function mostrarTodos(){
-        $agenda = Agenda::all();
-       
-        if (count($agenda)==0){
+    
+    public function pesquisarPorId($id)
+    {
+        $agenda = Agenda::find($id);
+
+        if ($agenda == null) {
             return response()->json([
-                'status'=> false,
-                'message'=> "nenhum dado encontrado,"
+                'status' => false,
+                'message' => "Usuario não encontrada"
             ]);
         }
         return response()->json([
-            'status'=> true,
-            'data'=> $agenda
+            'status' => false,
+            'message' => 'Não há resultado para pesquisa.'
         ]);
     }
-    public function exclui($id)
+
+    public function excluiAgenda($id)
     {
-       
+        
         $agenda = Agenda::find($id);
         if (!isset($agenda)) {
             return response()->json([
                 'status' => false,
-                'message' => "Agendamento não encontrado"
+                'message' => " não encontrado"
             ]);
         }
 
         $agenda->delete();
         return response()->json([
             'status' => true,
-            'message' => " Agendamento excluído com sucesso"
+            'message' => " excluído com sucesso"
         ]);
     }
-    public function update(AgendaUpdateFormRequestUpdate $request)
+    public function updateAgenda(AgendaFormRequestUpdate $request)
     {
         $agenda = Agenda::find($request->id);
 
         if (!isset($agenda)) {
             return response()->json([
                 'status' => false,
-                'message' => "Agendamento não encontrado"
+                'message' => "agenda não encontrado"
             ]);
         }
        
@@ -121,7 +125,7 @@ class AgendaController extends Controller
         if(count($agenda)==0){
             return response()->json([
                 'status'=> false,
-                'message'=> " Agendamento nao encontrado"
+                'message'=> " nao encontrado"
             ]);
         }
         return response()->json([

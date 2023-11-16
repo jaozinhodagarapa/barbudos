@@ -51,13 +51,10 @@ Route::put('updateProfissional', [ProfissionalController::class, 'update']);
 Route::get('retornarTodos', [ProfissionalController::class, 'retornarTodos']);
 Route::get('pesquisaPoR/{id}', [ProfissionalController::class, 'pesquisaPoRId']);
 
-
-
-
-
-
-
-
-
+//Agenda
 Route::post('criarAgenda',[AgendaController::class, 'criarAgenda']);
+Route::post('agenda/pesquisaDataHora',[AgendaController::class, 'pesquisaPorDataHora']);
+Route::get('agenda/retornaTodos', [AgendaController::class, 'retornarTudo']);
+Route::delete('agenda/delete/{id}',[AgendaController::class, 'excluiAgenda']);
+Route::put('agenda/update', [AgendaController::class, 'updateAgenda']);
 
