@@ -22,34 +22,35 @@ use Illuminate\Support\Facades\Route;
 
 //Serviço
 Route::post('criarServico', [ServicoController::class, 'criarServico']);
-Route::post('noomes',[ServicoController::class, 'pesquisaPorNome']);
-Route::delete('delete/{id}',[ServicoController::class, 'excluir']);
-Route::put('update', [ServicoController::class, 'update']);
-Route::get('retornarTudos', [ServicoController::class, 'retornarTudo']);
-Route::get('pesquisaId/{id}', [ServicoController::class, 'pesquisaId']);
+Route::post('servico/pesquisaNome',[ServicoController::class, 'pesquisaPorNome']);
+Route::delete('servico/delete/{id}',[ServicoController::class, 'excluir']);
+Route::put('servico/update', [ServicoController::class, 'update']);
+Route::get('/servico/retornarTodos', [ServicoController::class, 'retornarTudo']);
+Route::get('servico/pesquisaId/{id}', [ServicoController::class, 'pesquisaId']);
 
 //Cliente
 Route::post('criarCliente', [ClienteController::class, 'criarCliente']);
-Route::post('nomes', [ClienteController::class, 'pesquisaPorNome']);
-Route::post('celular', [ClienteController::class, 'pesquisaCelular']);
-Route::post('cpf', [ClienteController::class, 'pesquisaCPF']);
-Route::post('email', [ClienteController::class, 'pesquisaEmail']);
-Route::delete('excluir/{id}', [ClienteController::class, 'excluir']);
-Route::put('updatee', [ClienteController::class, 'update']);
-Route::get('retornarTudus', [ClienteController::class, 'retornarTudo']);
-Route::get('pesquisaPorId/{id}', [ClienteController::class, 'pesquisaPorId']);
+Route::post('cliente/pesquisanome', [ClienteController::class, 'pesquisaPorNome']);
+Route::post('cliente/pesquisacelular', [ClienteController::class, 'pesquisaCelular']);
+Route::post('cliente/pesquisacpf', [ClienteController::class, 'pesquisaCPF']);
+Route::post('cliente/pesquisaemail', [ClienteController::class, 'pesquisaEmail']);
+Route::delete('cliente/excluir/{id}', [ClienteController::class, 'excluir']);
+Route::put('cliente/update', [ClienteController::class, 'update']);
+Route::get('cliente/retornarTodos', [ClienteController::class, 'retornarTudo']);
+Route::get('cliente/pesquisaPorId/{id}', [ClienteController::class, 'pesquisaPorId']);
 Route::put('cliente/esqueciSenha',[ClienteController::class, 'esqueciSenha']);
     
 //Profissional
 Route::post('criarProfissional', [ProfissionalController::class, 'criarProfissional']);
-Route::post('nomess', [ProfissionalController::class, 'pesquisaPorNome']);
-Route::post('celular', [ProfissionalController::class, 'pesquisaCelular']);
-Route::post('cpf', [ProfissionalController::class, 'pesquisaCPF']);
-Route::post('email', [ProfissionalController::class, 'pesquisaEmail']);
-Route::delete('excluir/{id}', [ProfissionalController::class, 'excluir']);
-Route::put('updateProfissional', [ProfissionalController::class, 'update']);
-Route::get('retornarTodos', [ProfissionalController::class, 'retornarTodos']);
-Route::get('pesquisaPoR/{id}', [ProfissionalController::class, 'pesquisaPoRId']);
+Route::post('profissional/pesquisanome', [ProfissionalController::class, 'pesquisaPorNome']);
+Route::post('profissional/celular', [ProfissionalController::class, 'pesquisaCelular']);
+Route::post('profisional/cpf', [ProfissionalController::class, 'pesquisaCPF']);
+Route::post('profissional/email', [ProfissionalController::class, 'pesquisaEmail']);
+Route::delete('profissional/excluir/{id}', [ProfissionalController::class, 'excluir']);
+Route::put('profissional/update', [ProfissionalController::class, 'update']);
+Route::get('profissional/retornarTodos', [ProfissionalController::class, 'retornarTodos']);
+Route::get('profissional/pesquisaPor/{id}', [ProfissionalController::class, 'pesquisaPoRId']);
+Route::put('profissional/esqueciSenha', [ProfissionalController::class, 'esqueciSenha']);
 
 //Agenda
 Route::post('criarAgenda',[AgendaController::class, 'criarAgenda']);
