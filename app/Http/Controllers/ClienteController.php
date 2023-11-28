@@ -106,7 +106,7 @@ class ClienteController extends Controller
     }
     public function esqueciSenha(Request $request)
     {
-        $cliente = cliente::where('cpf', $request->cpf)->first();
+        $cliente = cliente::where('id', $request->id)->first();
 
         if (isset($cliente)) {
             $cliente->password = Hash::make($cliente->cpf);

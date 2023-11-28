@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 //Serviço
 Route::post('criarServico', [ServicoController::class, 'criarServico']);
-Route::post('servico/pesquisaNome',[ServicoController::class, 'pesquisaPorNome']);
+Route::post('servico/pesquisa/Nome',[ServicoController::class, 'pesquisaPorNome']);
 Route::delete('servico/delete/{id}',[ServicoController::class, 'excluir']);
 Route::put('servico/update', [ServicoController::class, 'update']);
 Route::get('/servico/retornarTodos', [ServicoController::class, 'retornarTudo']);
@@ -38,7 +38,7 @@ Route::delete('cliente/excluir/{id}', [ClienteController::class, 'excluir']);
 Route::put('cliente/update', [ClienteController::class, 'update']);
 Route::get('cliente/retornarTodos', [ClienteController::class, 'retornarTudo']);
 Route::get('cliente/pesquisaPorId/{id}', [ClienteController::class, 'pesquisaPorId']);
-Route::put('cliente/esqueciSenha',[ClienteController::class, 'esqueciSenha']);
+Route::put('cliente/esqueciSenha/{id}',[ClienteController::class, 'esqueciSenha']);
     
 //Profissional
 Route::post('criarProfissional', [ProfissionalController::class, 'criarProfissional']);
@@ -50,7 +50,7 @@ Route::delete('profissional/excluir/{id}', [ProfissionalController::class, 'excl
 Route::put('profissional/update', [ProfissionalController::class, 'update']);
 Route::get('profissional/retornarTodos', [ProfissionalController::class, 'retornarTodos']);
 Route::get('profissional/pesquisaPor/{id}', [ProfissionalController::class, 'pesquisaPoRId']);
-Route::put('profissional/esqueciSenha', [ProfissionalController::class, 'esqueciSenha']);
+Route::put('profissional/esqueciSenha/{id}', [ProfissionalController::class, 'esqueciSenha']);
 
 //Agenda
 Route::post('criarAgenda',[AgendaController::class, 'criarAgenda']);

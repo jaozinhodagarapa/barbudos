@@ -221,7 +221,7 @@ class ProfissionalController extends Controller
 
        public function esqueciSenha(Request $request)
        {
-           $profissional = Profissional::where('cpf', $request->cpf)->first();
+           $profissional = Profissional::where('id', $request->id)->first();
    
            if (isset($profissional)) {
                $profissional->password = Hash::make($profissional->cpf);
