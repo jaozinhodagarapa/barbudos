@@ -17,6 +17,13 @@ composer update
 ```
 code .
 ```
+5. Copiando o env. do exemplo
+```
+copy .env.example .env
+```
+6. Acessar o Visual Studio Code
+```
+code.
 ## Insomnia
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fjaozinhodagarapa%2Flojavirtual-api%2Fmain%2Finsomnia.json%3Ftoken%3DGHSAT0AAAAAACGBYKMQTFRB76JZUZIGBJF6ZGSEYXA)
 
