@@ -27,7 +27,7 @@ class ServicoFormRequestUpdate extends FormRequest
           'nome' => 'required|max:80|min:5|unique:servicos,nome,'.$this->id,
           'descricao' => 'required|max:200|min:10',
           'duracao' => 'required|integer',
-          'preco'=> 'required|decimal:2 ',
+          'preco'=> 'required|decimal:2,4 ',
           
         ];
     }
@@ -49,9 +49,11 @@ class ServicoFormRequestUpdate extends FormRequest
             'descricao.max' => 'descricao deve conter no maximo 200 caracteres',
             'descricao.min' => 'descricao deve conter no minimo 10 caracteres',
             'duracao.required' => 'duracao obrigatorio',
+            'duracao.integer' => 'O campo Aceita apenas número inteiro',
             'preco.required' => 'preço obrigatorio',
             'preco.preco' => 'formato de preço invalido',
-            
+            'preco.decimal' => 'O campo aceita apenas número decimal',
+           
           
 
         ];

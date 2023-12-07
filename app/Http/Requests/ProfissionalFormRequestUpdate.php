@@ -26,7 +26,7 @@ class ProfissionalFormRequestUpdate extends FormRequest
         return [
             'nome' => 'required|max:120|min:5',
             'celular' => 'required|max:11|min:10',
-            'email' => 'required|max:120|unique:profissionals,email',
+            'email' => 'required|email|max:120|unique:profissionals,email',
             'cpf' => 'required|max:11|min:11|unique:profissionals,cpf',
             'nascimento' =>'required|date',
             'cidade' => 'required|max:120',
@@ -60,6 +60,7 @@ class ProfissionalFormRequestUpdate extends FormRequest
             'email.unique' => 'o email ja foi cadastrado',
             'email.required' => 'este campo é obrigatorio',
             'email.max' => 'o campo email deve conter no maximo 120 caracteres',
+            'email.email' => 'Email inválido',
             'cpf.unique' => 'esse cpf ja foi cadastrado',
             'cpf.required' => 'O campo cpf é obrigatorio',
             'cpf.max' => 'o campo cpf deve conter no maximo 11 caracteres',

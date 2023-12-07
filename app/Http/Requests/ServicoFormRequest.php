@@ -26,8 +26,8 @@ class ServicoFormRequest extends FormRequest
         return [
           'nome' => 'required|max:80|min:5|unique:servicos,nome',
           'descricao' => 'required|max:200|min:10',
-          'duracao' => 'required',
-          'preco'=> 'required',
+          'duracao' => 'required|integer',
+          'preco'=> 'required|decimal:2,4',
          
         ];
     }
@@ -47,10 +47,12 @@ class ServicoFormRequest extends FormRequest
             'nome.min' => 'o campo nome deve conter no minimo 5 caracteres',
             'descricao.required' => 'descricao obrigatorio',
             'descricao.max' => 'descricao deve conter no maximo 200 caracteres',
+            'duracao.integer' => 'O campo Aceita apenas número inteiro',
             'descricao.min' => 'descricao deve conter no minimo 10 caracteres',
             'duracao.required' => 'duracao obrigatorio',
             'preco.required' => 'preço obrigatorio',
             'preco.preco' => 'formato de preço invalido',
+            'preco.decimal' => 'O campo aceita apenas número decimal',
            
          
 
